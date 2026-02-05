@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1200">
+
+  <title>PM SHRI Kendriya Vidyalaya Nagaur — Messages & Feedback</title>
+  <style>
+    /* 🔸 Message text alignment (Final Fixed) */
+.principal p,
+.hm p,
+.cla p {
+  text-align: justify !important;
+  line-height: 1.7;
+  word-spacing: 1px;
+  text-justify: inter-word;
+}
+
+    :root {
+      --purple1:#5e2a86;
+      --purple2:#7b1fa2;
+      --banner-bg:linear-gradient(90deg,#5e2a86,#7b1fa2);
+      --menu-bg:linear-gradient(90deg,#6627b6,#3a8ef6);
+      --card-bg:linear-gradient(145deg,#f8f4ff,#ece2ff);
+      --footer-bg:linear-gradient(90deg,#4b1d6e,#6a1b9a,#7b1fa2);
+      --footer-highlight:#ffdeff;
+      --radius:14px;
+    }
+
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Segoe UI","Noto Sans Devanagari",system-ui, -apple-system, Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(135deg,#f8f6ff,#efe6ff);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    /* 🔒 Lock desktop layout on all devices */
+body, html {
+  min-width: 768px;
+  overflow-x: auto;
+}
+
+.banner, nav, .container, footer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid !important;
+  grid-template-columns: 1fr 380px !important;
+}
+
+    /* Banner */
+    .banner{
+      width:100%;
+      background:var(--banner-bg);
+      margin: 0 auto;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      gap:28px;
+      padding:28px 36px;
+      box-shadow:0 6px 24px rgba(32,18,72,0.12);
+      border-bottom-left-radius:18px;
+      border-bottom-right-radius:18px;
+    }
+    .banner img{width:220px;height:auto;object-fit:contain;border-radius:10px}
+    .banner .text{flex:1}
+    .banner .line-hi{font-size:clamp(24px,3vw,36px);font-weight:800}
+    .banner .line-en{font-size:15px;color:rgba(255,255,255,0.9);margin-top:6px;font-weight:600}
+    .banner .line-bi{font-size:13px;color:#fff;opacity:.95;font-style:italic;margin-top:4px}
+    .banner .badge{background:rgba(255,255,255,0.08);padding:6px 10px;border-radius:999px;font-size:13px;margin-top:6px;display:inline-block}
+
+    /* Nav */
+    nav{
+      background:var(--menu-bg);
+      padding:10px 16px;
+      box-shadow:0 4px 18px rgba(32,18,72,0.08);
+      position:relative;
+      z-index:50;
+      margin:12px auto;
+      border-radius:12px;
+      max-width:1180px;
+    }
+    nav ul{display:flex;gap:10px;list-style:none;justify-content:center;flex-wrap:wrap}
+    nav li{position:relative}
+    nav a{
+      color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;
+      font-weight:700;cursor:pointer;transition:all .18s ease;
+      display:inline-block;
+    }
+    nav a:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
+    nav li ul{
+      display:none;position:absolute;top:calc(100% + 8px);left:0;
+      background:#fff;padding:6px;min-width:240px;border-radius:12px;
+      box-shadow:0 12px 30px rgba(32,18,72,0.12);
+      opacity:0;transform:translateY(-10px);
+      transition:opacity .28s ease,transform .28s ease;
+    }
+    nav li.show ul{display:block;opacity:1;transform:translateY(0)}
+    nav li ul li a{color:#222;padding:10px 14px;display:block;font-weight:600}
+    nav li ul li a:hover{background:#f7f7fb}
+
+    /* Layout */
+    .container{
+      max-width:1180px;
+      margin:30px auto;
+      display:grid;
+      grid-template-columns:1fr 380px;
+      gap:24px;
+      padding:0 20px;
+    }
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      box-shadow:0 8px 28px rgba(32,18,72,0.08);
+      padding:20px;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 48px rgba(32,18,72,0.14);
+    }
+    h3{color:var(--purple1);margin-bottom:10px;text-align:left;font-size:18px}
+
+    /* Principal */
+    .principal{width:70%}
+    .principal img{
+      width:120px;height:120px;border-radius:12px;border:3px solid rgba(123,31,162,0.12);
+      display:block;margin:14px auto;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .principal img:hover{transform:scale(1.03);box-shadow:0 12px 30px rgba(123,31,162,0.12)}
+    .principal .byline{text-align:right;color:var(--purple1);font-weight:700;margin-top:10px}
+
+    /* Feedback */
+    .feedback{width:70%;border:none}
+    .feedback input,.feedback textarea{
+      width:100%;padding:12px;border:1px solid rgba(0,0,0,0.06);
+      border-radius:10px;font-size:15px;margin-bottom:10px;background:#fff;
+      transition:box-shadow .18s ease, border-color .18s ease;
+    }
+    .feedback textarea{min-height:220px;resize:vertical}
+    .feedback input:focus,.feedback textarea:focus{
+      border-color:var(--purple2);
+      box-shadow:0 8px 22px rgba(123,31,162,0.08);
+    }
+    .feedback button{
+      background:linear-gradient(135deg,var(--purple1),var(--purple2));
+      color:#fff;border:none;padding:12px;border-radius:10px;
+      font-weight:700;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .feedback button:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.12)}
+    #msg{margin-top:6px;font-weight:700;color:var(--purple1)}
+
+    /* Side Cards */
+    .side-cards{display:flex;flex-direction:column;gap:18px;align-items:center}
+    .side-cards .card{width:80%;text-align:left}
+    .side-cards .small-img{
+      width:120px;height:120px;border-radius:12px;border:3px solid rgba(123,31,162,0.12);
+      display:block;margin:10px auto;transition:transform .18s ease;
+    }
+    .side-cards .small-img:hover{transform:scale(1.03)}
+    .meta{font-size:14px;text-align:right;color:var(--purple1);font-weight:800;margin-top:10px}
+    .role{font-size:13px;color:var(--purple2);text-align:right;font-weight:700}
+
+    /* Footer */
+    footer{
+      background:var(--footer-bg);
+      color:#fff;text-align:center;
+      padding:28px 14px;
+      border-top:4px solid rgba(255,255,255,0.12);
+      border-radius:12px;
+      margin-top:40px;
+      box-shadow:0 -6px 24px rgba(32,18,72,0.12);
+      transition:background 0.5s ease, box-shadow .3s ease;
+    }
+    .footer-title{font-weight:700;font-size:17px;margin-bottom:6px}
+    .visit-counter{font-weight:700;margin-top:6px}
+    .footer-highlight{color:var(--footer-highlight);font-weight:800;text-shadow:0 0 10px rgba(255,255,255,0.28)}
+
+    /* Theme Switcher */
+    #themeSwitcher{position:fixed;top:20px;right:28px;z-index:9999}
+    #themeToggleBtn{
+      background:linear-gradient(135deg,var(--purple1),var(--purple2));
+      color:#fff;border:none;padding:14px 20px;border-radius:16px;
+      box-shadow:0 8px 22px rgba(32,18,72,0.12);
+      font-weight:800;font-size:16px;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease;
+    }
+    #themeToggleBtn:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(32,18,72,0.12)}
+    #themeMenu{
+      display:none;margin-top:10px;background:#fff;border-radius:12px;
+      box-shadow:0 14px 40px rgba(32,18,72,0.12);
+      padding:10px;text-align:center;
+    }
+    #themeMenu.show{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .theme-option{
+      width:42px;height:40px;border-radius:10px;cursor:pointer;
+      border:2px solid rgba(255,255,255,0.9);box-shadow:0 6px 18px rgba(32,18,72,0.06);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .theme-option:active{transform:scale(.98)}
+
+    @media(max-width:900px){.container{grid-template-columns:1fr;padding:0 12px}}
+  </style>
+</head>
+<body>
+
+  <!-- Theme Switcher (top-right) -->
+  <div id="themeSwitcher" aria-hidden="false">
+    <button id="themeToggleBtn" aria-expanded="false" title="Theme">🎨 Theme</button>
+    <div id="themeMenu" role="menu" aria-label="Theme colors">
+      <div class="theme-option" tabindex="0" data-theme="pink" title="Pink" style="background:linear-gradient(135deg,#ff9ccf,#ff66b3)"></div>
+      <div class="theme-option" tabindex="0" data-theme="purple" title="Purple" style="background:linear-gradient(135deg,#5e2a86,#7b1fa2)"></div>
+      <div class="theme-option" tabindex="0" data-theme="maroon" title="Maroon" style="background:linear-gradient(135deg,#800000,#a00000)"></div>
+      <div class="theme-option" tabindex="0" data-theme="yellow" title="Yellow" style="background:linear-gradient(135deg,#ffd54f,#ffea00)"></div>
+      <div class="theme-option" tabindex="0" data-theme="blue" title="Blue" style="background:linear-gradient(135deg,#3a8ef6,#1e88e5)"></div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <header class="banner">
+    <img src="https://lh3.googleusercontent.com/d/1fZDYt0Y6m7ycYmP3_QTm4aAQICX-TfWi=w800" alt="School Logo">
+    <div class="text">
+      <div class="line-hi">पी एम श्री केंद्रीय विद्यालय नागौर राजस्थान</div>
+      <div class="line-en">PM SHRI KENDRIYA VIDYALAYA NAGAUR — Primary Department</div>
+      <div class="line-bi">(प्राथमिक विभाग · Primary Department)</div>
+      <div class="badge">प्राथमिक विभाग • Digital TLMs • Activity Based Learning</div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav>
+    <ul>
+      <li><a>Home</a></li>
+      <li><a>About Us</a>
+        <ul>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">About Vidyalaya</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyJNLWNNlNUWI2Cq4c_6IyTm5GEhCSnhecHfdG0TqniGYc5RUKeKRi1gt50am9a8UWwbA/exec">Our Primary Staff</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Mission & Vision</a></li>
+        </ul>
+      </li>
+      <li><a>Digital TLMs</a>
+        <ul>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">हिंदी</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">English</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Math</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">TWAU</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Others</a></li>
+        </ul>
+      </li>
+      <li><a>Lesson Plans</a>
+        <ul>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">हिंदी</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">English</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Math</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">TWAU</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Others</a></li>
+        </ul>
+      </li>
+      <li><a>Photo Gallery</a>
+        <ul>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">FLN / NIPUN BHARAT</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">CLA</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Other Activities</a></li>
+        </ul>
+      </li>
+      <li><a>Useful Tools</a>
+        <ul>
+          <li><a href="https://script.google.com/macros/s/AKfycbyhX3eTDbAQoVJPdHSbORjmbH0sIW-7FUEKDBoWq6wPvUgWutK6Rdj7f_a83XA0gBXV/exec">CPD Certificate Automation</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbzKg7aAWcxO8JZhvAdVFE7AJEQO6m_AyT6s5BZiQ9C1ALlH84UNiua8K9MqVFvKkz7O/exec">CLA Certificate Automation</a></li>
+          <li><a href="https://script.google.com/macros/s/AKfycbyl0ZQAlBCoMgfX1wOuXLSOQ8KOTanFNsbMAkKDoiuJwVplekQj0yYNLmq552Ry5U1R/exec">Enrollment Report Generator</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main class="container">
+    <!-- LEFT: Principal + Feedback -->
+    <section>
+      <article class="card principal">
+        <h3>💬 प्राचार्य का संदेश</h3>
+        <img src="https://cdnbbsr.s3waas.gov.in/s3kv01c98b1629aafae054c34430acd091/uploads/2024/05/2024052530.jpeg" alt="Principal Photo">
+        <p >
+          शिक्षा का उद्देश्य केवल ज्ञानार्जन नहीं, बल्कि बच्चे के संपूर्ण व्यक्तित्व का विकास है। 
+          पीएम श्री केंद्रीय विद्यालय नागौर के प्राथमिक विभाग में हम यह सुनिश्चित करते हैं कि 
+          प्रत्येक बालक–बालिका आत्मविश्वास, रचनात्मकता और नैतिक मूल्यों से परिपूर्ण होकर 
+          भविष्य की चुनौतियों के लिए तैयार हो।  
+          हमारा प्रयास है कि सीखने की प्रक्रिया बच्चों के लिए रोचक, प्रासंगिक और अनुभवात्मक हो। 
+          डिजिटल शिक्षण सामग्री (Digital TLMs), गतिविधि आधारित शिक्षा और नवीन तकनीकी माध्यमों के प्रयोग से हम शिक्षा को सरल और आनंददायक बना रहे हैं।
+        </p>
+        <p class="byline">— एम आर गुजर<br>प्राचार्य, पीएम श्री केंद्रीय विद्यालय, नागौर</p>
+      </article>
+
+      <article class="card feedback" style="margin-top:18px;">
+        <h3>📝 सुझाव / Feedback</h3>
+        <form id="feedbackForm">
+          <input type="text" id="name" name="name" placeholder="अपना नाम लिखें" required>
+          <textarea id="feedback" name="feedback" placeholder="अपना सुझाव यहाँ लिखें..." required></textarea>
+          <button type="submit">जमा करें</button>
+        </form>
+        <div id="msg"></div>
+      </article>
+    </section>
+
+    <!-- RIGHT: HM + CLA -->
+    <aside class="side-cards">
+      <article class="card hm">
+        <h3>प्रभारी प्रधानाध्यापक का संदेश</h3>
+        <img class="small-img" src="https://cdnbbsr.s3waas.gov.in/s3kv01c98b1629aafae054c34430acd091/uploads/bfi_thumb/2025083048-rb08b6cbyqb36yyiclimqkvedksqziosa1zxxqufdg.jpg" alt="HM Photo">
+        <p>
+          प्राथमिक स्तर पर शिक्षा का आधार मजबूत बनाना हमारे विद्यालय का प्रमुख उद्देश्य है। 
+          हम प्रयासरत हैं कि प्रत्येक विद्यार्थी में सीखने की जिज्ञासा और अनुशासन का विकास हो।
+        </p>
+        <div class="meta">महेश चंद मीणा</div>
+        <div class="role">प्रभारी प्रधानाध्यापक</div>
+      </article>
+
+      <article class="card cla">
+        <h3>सी.एल.ए. प्रभारी का संदेश</h3>
+        <img class="small-img" src="https://cdnbbsr.s3waas.gov.in/s3kv01c98b1629aafae054c34430acd091/uploads/bfi_thumb/2024082716-qt7qeu4fo1fbj4rwvkpesyz0qqume4eem19u0v63k2.jpg" alt="CLA Photo">
+        <p>
+          विद्यार्थियों में नेतृत्व, सहयोग और आत्मविश्वास की भावना विकसित करना 
+          विद्यालय का अभिन्न उद्देश्य है। 
+          सी.एल.ए. गतिविधियाँ बच्चों में जिम्मेदारी और रचनात्मक सोच को प्रोत्साहित करती हैं।
+        </p>
+        <div class="meta">शिव सिंह</div>
+        <div class="role">सी.एल.ए. प्रभारी (PRT)</div>
+      </article>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-title">PM SHRI Kendriya Vidyalaya Nagaur · Primary Department</div>
+    <div class="visit-counter">Total Visits: <span id="visitCount">...</span></div>
+    <div>Developed & Maintained by <span class="footer-highlight">Vikas Jangid, PRT , PM SHRI KV Nagaur</span></div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme variables and handler
+    (function(){
+      const root=document.documentElement;
+      const themes={
+        pink:{
+          '--purple1':'#ff6fa3','--purple2':'#ff66b3',
+          '--banner-bg':'linear-gradient(90deg,#ff6fa3,#ff66b3)',
+          '--menu-bg':'linear-gradient(90deg,#ff66b3,#ff6fa3)',
+          '--card-bg':'linear-gradient(145deg,#fff0f8,#ffeef8)',
+          '--footer-bg':'linear-gradient(90deg,#e0558d,#c94d84)',
+          '--footer-highlight':'#ffd1e9'
+        },
+        purple:{
+          '--purple1':'#5e2a86','--purple2':'#7b1fa2',
+          '--banner-bg':'linear-gradient(90deg,#5e2a86,#7b1fa2)',
+          '--menu-bg':'linear-gradient(90deg,#6627b6,#3a8ef6)',
+          '--card-bg':'linear-gradient(145deg,#f8f4ff,#ece2ff)',
+          '--footer-bg':'linear-gradient(90deg,#4b1d6e,#6a1b9a,#7b1fa2)',
+          '--footer-highlight':'#ffdeff'
+        },
+        maroon:{
+          '--purple1':'#6b0f0f','--purple2':'#9b111e',
+          '--banner-bg':'linear-gradient(90deg,#6b0f0f,#9b111e)',
+          '--menu-bg':'linear-gradient(90deg,#8e0b0b,#6d071e)',
+          '--card-bg':'linear-gradient(145deg,#fff6f6,#ffecec)',
+          '--footer-bg':'linear-gradient(90deg,#4a0505,#7a0a0a)',
+          '--footer-highlight':'#ffc1c1'
+        },
+        yellow:{
+          '--purple1':'#b58900','--purple2':'#f2c94c',
+          '--banner-bg':'linear-gradient(90deg,#b58900,#f2c94c)',
+          '--menu-bg':'linear-gradient(90deg,#f2c94c,#f9d976)',
+          '--card-bg':'linear-gradient(145deg,#fffaf0,#fff4cc)',
+          '--footer-bg':'linear-gradient(90deg,#b07a00,#d4af37)',
+          '--footer-highlight':'#fff4b1'
+        },
+        blue:{
+          '--purple1':'#1e88e5','--purple2':'#3a8ef6',
+          '--banner-bg':'linear-gradient(90deg,#1e88e5,#3a8ef6)',
+          '--menu-bg':'linear-gradient(90deg,#1976d2,#3a8ef6)',
+          '--card-bg':'linear-gradient(145deg,#f0f7ff,#e6f0ff)',
+          '--footer-bg':'linear-gradient(90deg,#1565c0,#1e88e5)',
+          '--footer-highlight':'#cfe8ff'
+        }
+      };
+
+      const btn=document.getElementById('themeToggleBtn');
+      const menu=document.getElementById('themeMenu');
+      const opts=document.querySelectorAll('.theme-option');
+
+      function applyTheme(name){
+        if(!themes[name]) return;
+        const map = themes[name];
+        Object.keys(map).forEach(k => root.style.setProperty(k, map[k]));
+        try{ localStorage.setItem('kv_theme', name); } catch(e){}
+      }
+
+      // load saved
+      // load saved
+try{
+  const saved = localStorage.getItem('kv_theme');
+  if(saved && themes[saved]) applyTheme(saved);
+  else {
+    applyTheme('maroon'); // Default theme: maroon
+  }
+} catch(e){}
+
+
+      // toggle theme menu
+      btn.addEventListener('click', function(e){
+        const show = menu.classList.toggle('show');
+        btn.setAttribute('aria-expanded', show ? 'true' : 'false');
+        e.stopPropagation();
+      });
+
+      opts.forEach(o => {
+        o.addEventListener('click', function(e){
+          const t = this.getAttribute('data-theme');
+          applyTheme(t);
+          menu.classList.remove('show');
+          btn.setAttribute('aria-expanded','false');
+          e.stopPropagation();
+        });
+        o.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); this.click(); } });
+      });
+
+      // close theme menu on outside click
+      document.addEventListener('click', function(e){
+        if(!document.getElementById('themeSwitcher').contains(e.target)){
+          menu.classList.remove('show'); btn.setAttribute('aria-expanded','false');
+        }
+      });
+
+    })();
+
+    
+
+    // Visit counter
+    async function updateCounter(){
+      try{
+        const res = await fetch('https://script.google.com/macros/s/AKfycbyNgwzc_KjYElxU2hCPwxselBxx67vfnTGKxY7GMFbLKw5Y-rFnbDqRyhfFd_Up0-5A/exec');
+        const count = await res.text();
+        document.getElementById('visitCount').innerText = count;
+      } catch(err) {
+        document.getElementById('visitCount').innerText = 'Offline';
+      }
+    }
+    updateCounter();
+
+    // Dropdown click toggle with auto-close and smooth animation
+    // ✅ Dropdown click toggle with working links + proper open/close
+// Dropdown click toggle with auto-close and smooth animation (fixed)
+// ✅ Fixed: Every link opens in a new tab, dropdowns still work
+document.querySelectorAll('nav > ul > li > a').forEach(a => {
+  a.addEventListener('click', function(e){
+    const li = this.parentElement;
+    const subMenu = li.querySelector('ul');
+
+    // अगर submenu है → बस open/close करे
+    if(subMenu){
+      e.preventDefault();
+      const opened = li.classList.toggle('show');
+      document.querySelectorAll('nav li').forEach(other => {
+        if(other !== li) other.classList.remove('show');
+      });
+      e.stopPropagation();
+    } else {
+      // अगर submenu नहीं है → नई tab में खोले
+      const href = this.getAttribute('href');
+      if(href && href !== '#'){
+        window.open(href, '_blank');
+      }
+    }
+  });
+});
+
+// submenu items (li ul li a) भी new tab में खुलें
+document.querySelectorAll('nav li ul li a').forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    if(href && href !== '#'){
+      window.open(href, '_blank');
+    }
+  });
+});
+
+// बाहर क्लिक करने पर menu बंद हो जाए
+document.addEventListener('click', () => {
+  document.querySelectorAll('nav li').forEach(li => li.classList.remove('show'));
+});
+
+
+
+
+  </script>
+ 
+
+</body>
+</html>
